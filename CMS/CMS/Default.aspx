@@ -48,10 +48,10 @@
   
    <ContentTemplate>
     <div class="container">    
-        <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">                    
+        <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-4 col-md-offset-4 col-sm-8 col-sm-offset-2">                    
             <div class="panel panel-info" >
                     <div class="panel-heading">
-                       <h4 class="panel-title"><a HREF="#"><img src="images/logo.png" class="center"></a></h4>
+                       <h4 class="panel-title"><a HREF="#"><img src="images/logo.png" class="img-responsive center-block"></a></h4>
                     </div>     
 
                     <div style="padding-top:30px" class="panel-body" >
@@ -75,8 +75,8 @@
                                 
                                 
                                 <div class="input-group">
-                                        <asp:label id ="lblInavlid" runat="server" style="display:none;" text="Invalid Username or Password" >
-                                            <span style="font:bold; color:red; " > Invalid Username or Password  </span>
+                                        <asp:label id ="lblInavlid" runat="server"   style="font:bold; color:red;  " visible ="false"  Text ="Invalid Username or password"  >
+                                            
                                         </asp:label>
                                             
                                         
@@ -87,7 +87,7 @@
                                 <div style="margin-top:10px" class="form-group">
                                     <!-- Button -->
 
-                                    <div class="col-sm-12 controls">
+                                    <div class="col-sm-12 col-sm-offset-4 controls ">
                                       <asp:LinkButton id="lnk_login"  runat="server" OnClick="btnLogin_Click"  CssClass="btn btn-success" >Sign In  </asp:LinkButton>
                                       
 

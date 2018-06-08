@@ -21,6 +21,10 @@ namespace ClaimManagement
             if (!objdal.isValidLogin(login_name, login_pass))
             {
                 this.lblInavlid.Visible = true;
+
+            }
+            else {
+                Response.Redirect("ManagementClaim.aspx");
             }
 
             
