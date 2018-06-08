@@ -20,6 +20,10 @@
                 margin-top:20px;
             }
 
+
+
+
+
             .panel-front .panel-heading .panel-title img {
 	            border-radius:3px 3px 0px 0px;
 	            width:100%;
