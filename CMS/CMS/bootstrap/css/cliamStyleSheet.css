@@ -1,0 +1,465 @@
+﻿body {
+}
+
+.header {
+    width: 100%;
+    background-color: white;
+    border: solid;
+    border-top: none;
+    border-color: green;
+    height: 150px;
+}
+
+.logo {
+    display: -webkit-inline-box;
+    width: 10%;
+}
+
+.footer {
+    width: 100%;
+    background-color: white;
+    border: solid;
+    border-color: green;
+    height: 120px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: white;
+}
+
+li {
+    float: left;
+}
+
+    li a {
+        display: block;
+        color: black;
+        text-align: center;
+        font-size: 17px;
+        font-weight: bold;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+        li a:hover {
+            background-color: #30793a;
+        }
+
+
+
+.fontshow {
+    display: inline-block;
+    padding-left: 154px;
+}
+
+    .fontshow li {
+        float: left;
+        margin: 9px;
+    }
+
+.Searching {
+    display: -webkit-inline-box;
+}
+
+.GridHeader {
+    color: Black;
+    border-top: solid;
+    border-top-width: 13px;
+    border-color: green;
+    font-family: "Times New Roman", Times, serif;
+    font-size: large;
+}
+
+
+.btn {
+    border: none;
+    outline: none;
+    padding: 5px 16px;
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
+
+    /* Style the active class, and buttons on mouse-over */
+    .active, .btn:hover {
+        background-color: white;
+        color: black;
+        border-bottom: solid;
+        border-bottom-color: green;
+    }
+
+.menuBar {
+    display: inline-table;
+    margin-left: 334px;
+    margin-top: 14px;
+    padding-top: 10px;
+    font-family: "Times New Roman", Times, serif;
+    font-size: large;
+}
+
+    .menuBar li {
+        width: 120px;
+    }
+
+        .menuBar li span {
+            background-color: #969696;
+        }
+
+
+/*}
+.logo logodivimg {
+    height:60px;
+     width:20px;
+     display:inline-block;
+}*/
+
+.pagination-ys {
+    /*display: inline-block;*/
+    padding-left: 0;
+    margin: 20px 0;
+    border-radius: 4px;
+}
+
+    .pagination-ys table > tbody > tr > td {
+        display: inline;
+    }
+
+        .pagination-ys table > tbody > tr > td > a,
+        .pagination-ys table > tbody > tr > td > span {
+            position: relative;
+            float: left;
+            padding: 8px 12px;
+            line-height: 1.42857143;
+            text-decoration: none;
+            color: green;
+            background-color: #ffffff;
+            border: 1px solid #dddddd;
+            margin-left: -1px;
+        }
+
+        .pagination-ys table > tbody > tr > td > span {
+            position: relative;
+            float: left;
+            padding: 8px 12px;
+            line-height: 1.42857143;
+            text-decoration: none;
+            margin-left: -1px;
+            z-index: 2;
+            color: #aea79f;
+            background-color: #f5f5f5;
+            border-color: #dddddd;
+            cursor: default;
+        }
+
+        .pagination-ys table > tbody > tr > td:first-child > a,
+        .pagination-ys table > tbody > tr > td:first-child > span {
+            margin-left: 0;
+            border-bottom-left-radius: 4px;
+            border-top-left-radius: 4px;
+        }
+
+        .pagination-ys table > tbody > tr > td:last-child > a,
+        .pagination-ys table > tbody > tr > td:last-child > span {
+            border-bottom-right-radius: 4px;
+            border-top-right-radius: 4px;
+        }
+
+        .pagination-ys table > tbody > tr > td > a:hover,
+        .pagination-ys table > tbody > tr > td > span:hover,
+        .pagination-ys table > tbody > tr > td > a:focus,
+        .pagination-ys table > tbody > tr > td > span:focus {
+            color: #97310e;
+            background-color: #eeeeee;
+            border-color: #dddddd;
+        }
+
+
+.Background {
+    background-color: Black;
+    filter: alpha(opacity=90);
+    opacity: 0.8;
+}
+
+.Popup {
+    /*background-color: #FFFFFF;*/
+    /*border-width: 3px;*/
+    /*border-style: solid;
+            border-color: black;*/
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    width: 900px;
+    height: 500px;
+}
+
+.lbl {
+    font-size: 16px;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.GridShow {
+    margin-left: 10px;
+}
+
+.GridPager a, .GridPager span {
+    display: block;
+    height: 24px;
+    width: 24px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+}
+
+.GridPager a {
+    background-color: #f5f5f5;
+    color: #969696;
+    border: 1px solid #969696;
+}
+
+.GridPager span {
+    background-color: #81d374;
+    color: #000;
+    border: 1px solid #3AC0F2;
+}
+
+.h1 {
+    font-size: x-large;
+    text-decoration: none;
+    font-style: italic;
+}
+
+.SearchBy {
+    font-family: "Times New Roman", Times, serif;
+    font-size: large;
+}
+/* Home StyleSheet Start*/
+.Dashboard {
+}
+
+    .Dashboard h1 {
+        font-family: "Times New Roman", Times, serif;
+        margin-left: 42px;
+        font-size: x-large;
+        color: black;
+    }
+
+.NoOfInttimation {
+    background-color: #00BFFF;
+    width: 420px;
+    height: 171px;
+    display: inline-block;
+    margin-left: 17px;
+    border: solid;
+    border-color: #dddddd;
+}
+
+.TurnArroundTime {
+    background-color: #FFB6C1;
+    width: 420px;
+    height: 171px;
+    display: inline-block;
+    margin-left: 6px;
+    border: solid;
+    border-color: #dddddd;
+}
+
+.SattlementYear {
+    background-color: #D2B48C;
+    width: 420px;
+    display: inline-block;
+    height: 171px;
+    margin-left: -4px;
+    border: solid;
+    border-color: #dddddd;
+}
+
+.divSpace {
+    width: 100%;
+    margin-top: -17px;
+}
+
+.Amount {
+    background-color: #008080;
+    width: 420px;
+    display: inline-block;
+    height: 171px;
+    margin-left: 46px;
+    border: solid;
+    border-color: #dddddd;
+    margin-top: 7px;
+}
+
+.OutstandingClaim {
+    background-color: #6A5ACD;
+    width: 420px;
+    display: inline-block;
+    height: 171px;
+    border: solid;
+    border-color: #dddddd;
+    margin-left: 4px;
+}
+
+.TotalAmount {
+    background-color: #F5F5F5;
+    width: 420px;
+    display: inline-block;
+    border: solid;
+    height: 171px;
+    margin-left: 4px;
+    border-color: #dddddd;
+}
+
+.AssignedClaim {
+    background-color: #FFFFFF;
+    width: 420px;
+    display: inline-block;
+    border: solid;
+    height: 171px;
+    margin-left: 230px;
+    border-color: #dddddd;
+}
+
+.UnAssignedClaim {
+    background-color: #4169E1;
+    width: 420px;
+    display: inline-block;
+    border: solid;
+    height: 171px;
+    /*margin-left: 180px;*/
+    border-color: #dddddd;
+}
+
+.NoOfInttimation .IntimationHeading h3 {
+    font-size: large;
+    color: white;
+    text-decoration: none;
+    font-family: "Times New Roman", Times, serif;
+    margin-left: 45px;
+}
+
+.TurnArroundTime .TurnArroundTimeHeading h3 {
+    font-size: large;
+    text-decoration: none;
+    font-family: "Times New Roman", Times, serif;
+    margin-left: 45px;
+}
+
+.SattlementYear .SattlementYearHeading h3 {
+    font-size: large;
+    text-decoration: none;
+    font-family: "Times New Roman", Times, serif;
+    margin-left: 45px;
+}
+
+.TotalAmount .TotalAmountHeading h3 {
+    font-size: large;
+    text-decoration: none;
+    font-family: "Times New Roman", Times, serif;
+    margin-left: 45px;
+}
+
+.Amount .AmountHeading h3 {
+    font-size: large;
+    text-decoration: none;
+    font-family: "Times New Roman", Times, serif;
+    margin-left: 45px;
+}
+
+.OutstandingClaim .OutstandingClaimHeading h3 {
+    font-size: large;
+    text-decoration: none;
+    font-family: "Times New Roman", Times, serif;
+    margin-left: 45px;
+}
+
+.AssignedClaim .AssignedClaimHeading h3 {
+    font-size: large;
+    text-decoration: none;
+    font-family: "Times New Roman", Times, serif;
+    margin-left: 45px;
+}
+
+.UnAssignedClaim .UnAssignedClaimHeading h3 {
+    font-size: large;
+    text-decoration: none;
+    font-family: "Times New Roman", Times, serif;
+    margin-left: 45px;
+}
+
+
+/* Home StyleSheet End*/
+
+
+/*Email Template Start*/
+
+.habiblogo h1 {
+    font-size: x-large;
+    font-family: "Times New Roman", Times, serif;
+    display: inline-block;
+    text-decoration: none;
+    color: green;
+    margin-left: -62px;
+    margin-top: 64px;
+}
+
+
+.subjectName h1 {
+    font-size: large;
+    font-family: "Times New Roman", Times, serif;
+    display: inline-block;
+    margin-left: 60px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.Message p {
+    font-family: "Times New Roman", Times, serif;
+    display: inline-block;
+    margin-left: 60px;
+    color: black;
+    font-size: larger;
+    text-decoration: none;
+}
+
+.Message a {
+    font-family: "Times New Roman", Times, serif;
+    display: inline-block;
+    color: blue;
+    text-decoration: none;
+    font-size: large;
+}
+
+.CopyRight {
+    margin-left: 60px;
+    color: black;
+    border-top: solid;
+    border-color: gray;
+    border-top-width: thin;
+    border-top-style: outset;
+    text-decoration: none;
+    margin-top: 108px;
+}
+
+.CopyRightParagraph {
+    font-family: "Times New Roman", Times, serif;
+    font-size: larger;
+    text-decoration: none;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.sideBorder {
+    border-left: solid;
+    margin-top: 12px;
+    color: green;
+    border-left-width: 60px;
+}
+/*Email Template End*/
+
+
