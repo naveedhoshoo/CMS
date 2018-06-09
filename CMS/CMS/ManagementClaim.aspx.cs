@@ -37,27 +37,77 @@ namespace ClaimManagement
                 dt = new DataTable();
                 cc = new ClaimClass();
                 cc.getClaimRecordDemo(dt);
-                DataTable brdt=  dt.DefaultView.ToTable(true, new String[] { "BR_CODE", "BR_DESC" });
+                 DataTable brdt=  dt.DefaultView.ToTable(true, new String[] { "BR_CODE", "BR_DESC" });
+
                 ddlBranch.DataTextField = "BR_DESC";
                 ddlBranch.DataValueField = "BR_CODE";
+
+                DataRow row = brdt.NewRow();
+                row[0] = "";
+
+
+                row[1] = "";
+
+                brdt.Rows.InsertAt(row, 0);
+                brdt.AcceptChanges();
+
                 ddlBranch.DataSource = brdt;
                 ddlBranch.DataBind();
 
                 DataTable cldt = dt.DefaultView.ToTable(true, new String[] { "INSURED" });
+                row = cldt.NewRow();
+                row[0] = "";
+
+                cldt.Rows.InsertAt(row, 0);
+                cldt.AcceptChanges();
+
+
                 ddlClient.DataTextField = "INSURED";
                 ddlClient.DataValueField = "INSURED";
                 ddlClient.DataSource = cldt;
                 ddlClient.DataBind();
 
                 DataTable cltype = dt.DefaultView.ToTable(true, new String[] { "piydesc" });
+
+                row = cltype.NewRow();
+                row[0] = "";
+
+                cltype.Rows.InsertAt(row, 0);
+                cltype.AcceptChanges();
+
                 ddlInsuranceType.DataTextField = "piydesc";
                 ddlInsuranceType.DataValueField = "piydesc";
                 ddlInsuranceType.DataSource = cltype;
                 ddlInsuranceType.DataBind();
 
+                DataTable dtStaut = new DataTable();
+                dtStaut.Columns.Add("Status");
+                row = dtStaut.NewRow();
+                row[0] = "Intimated";
+                dtStaut.Rows.Add(row);
+                row = dtStaut.NewRow();
+                row[0] = "Settlement";
+                dtStaut.Rows.Add(row);
+                row = dtStaut.NewRow();
+                row[0] = "Settled";
+                dtStaut.Rows.Add(row);
 
+                
 
+                ddlStatus.DataTextField = "Status";
+                ddlStatus.DataValueField= "Status";
+                ddlStatus.DataSource = dtStaut;
+                ddlStatus.DataBind();
 
+                DataTable dtYear = dt.DefaultView.ToTable(true, new String[] { "GIH_YEAR" });
+                row = dtYear.NewRow();
+                row[0] = "";
+                dtYear.Rows.InsertAt(row, 0);
+                dtYear.AcceptChanges();
+                ddlgihyear.DataTextField = "GIH_YEAR";
+                ddlgihyear.DataValueField = "GIH_YEAR";
+                ddlgihyear.DataSource = dtYear;
+                ddlgihyear.DataBind();
 
 
                 GridView1.DataSource = dt;
@@ -150,7 +200,7 @@ namespace ClaimManagement
         {
             dt = new DataTable();
             cc = new ClaimClass();
-            cc.getClaimRecordsByCriteria(dt,"" , txtIntimationNo.Text, ddlBranch.Text, ddlClient.Text, ddlInsuranceType.Text);
+            cc.getClaimRecordsByCriteria(dt,"" , txtIntimationNo.Text, ddlBranch.SelectedItem.Text, ddlClient.SelectedItem.Text, ddlInsuranceType.SelectedItem.Text, ddlgihyear.SelectedItem.Text);
 
       
             GridView1.DataSource = dt;
@@ -159,19 +209,19 @@ namespace ClaimManagement
 
         public void DropdownClient()
         {
-            ddlClient.Items.Insert(0, new ListItem("Clients"));
+         //   ddlClient.Items.Insert(0, new ListItem("Clients"));
         }
         public void DropdownBranch()
         {
-            ddlBranch.Items.Insert(0, new ListItem("Branch"));
+           // ddlBranch.Items.Insert(0, new ListItem("Branch"));
         }
         public void DropdownInsuranceType()
         {
-            ddlInsuranceType.Items.Insert(0, new ListItem("Insurance Type"));
+           // ddlInsuranceType.Items.Insert(0, new ListItem("Insurance Type"));
         }
          public void DropdownStatus()
         {
-            ddlStatus.Items.Insert(0, new ListItem("Status"));
+            //ddlStatus.Items.Insert(0, new ListItem("Status"));
         }
     }
 }

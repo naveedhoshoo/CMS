@@ -268,7 +268,8 @@ namespace ClaimManagement
 
 
 
-        public void getClaimRecordsByCriteria(DataTable dt, string ToDate = "", string IntimationNo = "", string brdescparam ="", string insuredparam="", string piydesc="")
+        public void getClaimRecordsByCriteria(DataTable dt, string ToDate = "", string IntimationNo = "", string brdescparam ="", string insuredparam="", string piydesc="", string year="")
+
         
 
         {
@@ -532,6 +533,10 @@ namespace ClaimManagement
             {
                 qry += " and piydesc ='" + piydesc + "'";
 
+            }
+
+            if (!String.IsNullOrEmpty(year)) {
+                qry += " and gih_year  ='" + year + "'";
             }
 
             qry += @"group by piydesc,INTIMATIONNO,PPS_PARTY_CODE,INSURED,BR_CODE,BR_DESC,PDP_CODE,PDP_DESC,gih_doc_ref_no, gih_year,GIC_SHARE 

@@ -2,7 +2,26 @@
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 <%--<!DOCTYPE html>--%>
+<asp:Content ID="Content1" ContentPlaceHolderID="htmlHead" runat="server">
+     <script type="text/javascript">
+            $(function() {
+                $("#MainContentPlaceHolder_ddlClient").prepend("<option value='' >All</option>");
+                $("#MainContentPlaceHolder_ddlBranch").prepend("<option value='' >All</option>");
+                $("#MainContentPlaceHolder_ddlInsuranceType").prepend("<option value='' >All</option>");
+                $("#MainContentPlaceHolder_ddlStatus").prepend("<option value='' >All</option>");
+                $("#MainContentPlaceHolder_ddlgihyear").prepend("<option value='' >All</option>");
 
+                $(".chzn-select").chosen();
+                $('#MainContentPlaceHolder_ddlClient_chosen a span').html('Select Client');
+                $('#MainContentPlaceHolder_ddlBranch_chosen a span').html('Select Branch');
+                $('#MainContentPlaceHolder_ddlInsuranceType_chosen a span').html('Select Insurance Type');
+                $('#MainContentPlaceHolder_ddlStatus_chosen a span').html('Select Status');
+                $('#MainContentPlaceHolder_ddlStatus_ddlgihyear a span').html('Select Year');
+                $('body').css('overflow', 'hidden');
+                $('body').css('overflow', 'hidden');
+            });
+    </script>
+</asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
 
@@ -13,32 +32,28 @@
         <div class="row">
             <div class="col-md-12" style="display: -webkit-inline-box;">
 
-                <asp:Label ID="lblSearch" runat="server" Font-Bold="true" Style="font-size: larger" Text="Search By:"></asp:Label>
-                <asp:DropDownList ID="ddlClient" Style="margin-left: 10px" runat="server" CssClass="form-control" Width="170px" Height="40px">
-                    <asp:ListItem> Indus Motors</asp:ListItem>
-                    <asp:ListItem>Habib Sugar</asp:ListItem>
-                    <asp:ListItem>Metro</asp:ListItem>
+                <asp:Label ID="lblSearch" runat="server" Font-Bold="true" Style="font-size: larger" Text="Search By:" ></asp:Label>
+                <asp:DropDownList ID="ddlClient" Style="margin-left: 10px" runat="server" CssClass="form-control chzn-select"  Width="170px" Height="90px">
+                    
                 </asp:DropDownList>
-                <asp:TextBox ID="txtPolicyNo" Style="margin-left: 10px" runat="server" Width="170px" CssClass="form-control" Height="40px" placeholder="Policy No."></asp:TextBox>
-                <asp:TextBox ID="txtIntimationNo" Style="margin-left: 10px" runat="server" Width="170px" CssClass="form-control" Height="40px" placeholder="Intimation No."></asp:TextBox>
-                <asp:DropDownList ID="ddlBranch" Style="margin-left: 10px" runat="server" CssClass="form-control" Width="170px" Height="40px">
-                    <asp:ListItem>Karachi Zonel</asp:ListItem>
-                    <asp:ListItem>Lahore Gulberg</asp:ListItem>
-                    <asp:ListItem>Lahore Eden</asp:ListItem>
+                <asp:DropDownList ID="ddlBranch" Style="margin-left: 10px" runat="server" CssClass="form-control chzn-select" Width="170px"  Height="30px">
+                    
                 </asp:DropDownList>
-                <asp:DropDownList ID="ddlInsuranceType" Style="margin-left: 10px" runat="server" CssClass="form-control" Width="170px" Height="40px">
-                    <asp:ListItem>Fire</asp:ListItem>
-                    <asp:ListItem>Marine</asp:ListItem>
-                    <asp:ListItem>Motor</asp:ListItem>
-
+                <asp:DropDownList ID="ddlInsuranceType" Style="margin-left: 10px" runat="server" CssClass="form-control chzn-select" Width="170px" Height="30px">
+                    
                 </asp:DropDownList>
-                <asp:DropDownList ID="ddlStatus" Style="margin-left: 10px" runat="server" CssClass="form-control" Width="170px" Height="40px">
-                    <asp:ListItem>Intimated</asp:ListItem>
-                    <asp:ListItem>Settlement</asp:ListItem>
-                    <asp:ListItem>Settled</asp:ListItem>
+                <asp:DropDownList ID="ddlgihyear" Style="margin-left: 10px" runat="server" CssClass="form-control chzn-select" Width="170px" Height="30px">
+                    
+                </asp:DropDownList>
+                <asp:DropDownList ID="ddlStatus" Style="margin-left: 10px" runat="server" CssClass="form-control chzn-select" Width="170px" Height="30px">
+                   
                 </asp:DropDownList>
 
+                <asp:TextBox ID="txtPolicyNo" Style="margin-left: 10px" runat="server" Width="170px" CssClass="form-control" Height="25px" placeholder="Policy No."></asp:TextBox>
+                <asp:TextBox ID="txtIntimationNo" Style="margin-left: 10px" runat="server" Width="170px" CssClass="form-control" Height="25px" placeholder="Intimation No."></asp:TextBox>
                 <asp:Button ID="btnSearch" class="button" Style="margin-left: 10px" runat="server" Text="Search" Width="80px" Height="40px" CssClass="btn btn-success" OnClick="btnSearch_Click" />
+                
+                
             </div>
         </div>
 
@@ -48,7 +63,10 @@
             <asp:GridView ID="GridView1" runat="server"
                 AllowPaging="true" PageSize="10"
                 CssClass="table table-striped table-bordered responsive" AutoGenerateColumns="false"
-                OnRowCommand="GridView1_RowCommand" AllowSorting="true" DataKeyNames="INTIMATIONNO" OnRowDeleting="GridView1_RowDeleting" OnPageIndexChanging="GridView1_PageIndexChanging" EnableViewState="true">
+                OnRowCommand="GridView1_RowCommand" AllowSorting="true" DataKeyNames="INTIMATIONNO" 
+                OnRowDeleting="GridView1_RowDeleting" 
+                Style ="overflow-y:scroll"
+                OnPageIndexChanging="GridView1_PageIndexChanging" EnableViewState="true">
                    <HeaderStyle CssClass="GridHeader" Font-Size="Larger" ForeColor="Black" HorizontalAlign="Center" />
                 <Columns>
                     <asp:BoundField HeaderText="Intimation No" DataField="gih_doc_ref_no" />

@@ -41,3 +41,11 @@ E:\GitHubCode\CMS\CMS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 E:\GitHubCode\CMS\CMS\bin\Oracle.ManagedDataAccess.dll
 E:\GitHubCode\CMS\CMS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 E:\GitHubCode\CMS\CMS\obj\Debug\CMS.csprojResolveAssemblyReference.cache
+E:\GitHubCode\CMS\CMS\bin\Newtonsoft.Json.dll
+E:\GitHubCode\CMS\CMS\bin\System.Net.Http.Formatting.dll
+E:\GitHubCode\CMS\CMS\bin\System.Web.Http.dll
+E:\GitHubCode\CMS\CMS\bin\System.Web.Http.WebHost.dll
+E:\GitHubCode\CMS\CMS\bin\Newtonsoft.Json.xml
+E:\GitHubCode\CMS\CMS\bin\System.Net.Http.Formatting.xml
+E:\GitHubCode\CMS\CMS\bin\System.Web.Http.xml
+E:\GitHubCode\CMS\CMS\bin\System.Web.Http.WebHost.xml

@@ -40,24 +40,6 @@ namespace ClaimManagement {
         protected global::System.Web.UI.WebControls.DropDownList ddlClient;
         
         /// <summary>
-        /// txtPolicyNo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPolicyNo;
-        
-        /// <summary>
-        /// txtIntimationNo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtIntimationNo;
-        
-        /// <summary>
         /// ddlBranch control.
         /// </summary>
         /// <remarks>
@@ -76,6 +58,15 @@ namespace ClaimManagement {
         protected global::System.Web.UI.WebControls.DropDownList ddlInsuranceType;
         
         /// <summary>
+        /// ddlgihyear control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlgihyear;
+        
+        /// <summary>
         /// ddlStatus control.
         /// </summary>
         /// <remarks>
@@ -83,6 +74,24 @@ namespace ClaimManagement {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlStatus;
+        
+        /// <summary>
+        /// txtPolicyNo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtPolicyNo;
+        
+        /// <summary>
+        /// txtIntimationNo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtIntimationNo;
         
         /// <summary>
         /// btnSearch control.
