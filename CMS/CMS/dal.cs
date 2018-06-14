@@ -6,6 +6,8 @@ using Oracle.ManagedDataAccess;
 using System.Data;
 using Oracle.ManagedDataAccess.Client;
 //using System.Data.OracleClient;
+using CMS.Common.Db;
+using CMS;
 
 namespace ClaimManagement
 {
@@ -33,7 +35,7 @@ namespace ClaimManagement
         }
 
 
-        public bool isValidLogin(string username, string password)
+        public LoggedUser isValidLogin(string username, string password)
         {
 
             string constr = System.Configuration.ConfigurationManager.AppSettings["constr"];
@@ -42,7 +44,7 @@ namespace ClaimManagement
 
             con = new OracleConnection(constr);
 
-            bool validlogin = false;
+            LoggedUser user = null;
 
             DataSet dataset = new DataSet();
 
@@ -76,12 +78,33 @@ namespace ClaimManagement
 
                     OracleDataAdapter da = new OracleDataAdapter(objCmd);
 
+                    
+
+
                     da.Fill(dataset);
 
                     if (dataset.Tables[0].Rows.Count > 0)
                     {
 
-                        validlogin = true;
+                        user = new LoggedUser();
+                        user.UserID = dataset.Tables[0].Rows[0]["USERID"].ToString();
+                        user.Username    = dataset.Tables[0].Rows[0]["USERNAME"].ToString();
+                        user.UserType = dataset.Tables[0].Rows[0]["USERTYPE"].ToString();
+                        user.PageAllow = dataset.Tables[0].Rows[0]["PAGEALLOW"].ToString();
+                        user.UserLocations = new List<Locations>();
+
+                        for (int i = 0; i < dataset.Tables[0].Rows.Count; i++) {
+                            Locations loc = new Locations();
+                            loc.POR_ORGACODE = dataset.Tables[0].Rows[i]["POR_ORGACODE"].ToString();
+                            loc.POR_LOCACODE = dataset.Tables[0].Rows[i]["PLC_LOCACODE"].ToString();
+                            Branches branch = new Branches();
+                            branch.LOCADesc  = dataset.Tables[0].Rows[i]["PLC_LOCADESC"].ToString();
+                            branch.LOCADesc = dataset.Tables[0].Rows[i]["PLC_LOCASHORT"].ToString();
+                            loc.User_Branches = new List<Branches>();
+                            loc.User_Branches.Add(branch);
+                            user.UserLocations.Add(loc);
+                        }
+
 
                     }
 
@@ -99,7 +122,134 @@ namespace ClaimManagement
 
             }
 
-            return validlogin;
+            return user;
+
+        }
+
+        //HIL.GetDashBoardData
+
+        public DataTable GetDashBoardData()
+        {
+
+            string constr = System.Configuration.ConfigurationManager.AppSettings["constr"];
+
+
+
+            con = new OracleConnection(constr);
+
+            LoggedUser user = null;
+
+            DataTable dataset = new DataTable();
+
+            using (OracleConnection objConn = new OracleConnection(constr))
+
+            {
+
+                OracleCommand objCmd = new OracleCommand();
+
+                objCmd.Connection = objConn;
+
+                objCmd.CommandText = "HIL.GetDashBoardData";
+
+                objCmd.CommandType = CommandType.StoredProcedure;
+
+                
+                objCmd.Parameters.Add("PRC", OracleDbType.RefCursor).Direction = ParameterDirection.Output;
+
+
+
+                try
+
+                {
+
+                    objConn.Open();
+
+                    objCmd.ExecuteNonQuery();
+
+                    OracleDataAdapter da = new OracleDataAdapter(objCmd);
+
+
+
+
+                    da.Fill(dataset);
+
+                }
+
+                catch (Exception ex)
+
+                {
+
+                    System.Console.WriteLine("Exception: {0}", ex.ToString());
+
+                }
+
+                objConn.Close();
+
+            }
+
+            return dataset;
+
+        }
+
+        public DataSet1 GetPolicyData()
+        {
+
+            string constr = System.Configuration.ConfigurationManager.AppSettings["constr"];
+
+
+
+            con = new OracleConnection(constr);
+
+            LoggedUser user = null;
+            DataSet1   dataset = new DataSet1();
+
+            using (OracleConnection objConn = new OracleConnection(constr))
+
+            {
+
+                OracleCommand objCmd = new OracleCommand();
+
+                objCmd.Connection = objConn;
+
+                objCmd.CommandText = "HIL.PolicyDetails";
+
+                objCmd.CommandType = CommandType.StoredProcedure;
+
+
+                objCmd.Parameters.Add("PRC", OracleDbType.RefCursor).Direction = ParameterDirection.Output;
+
+
+
+                try
+
+                {
+
+                    objConn.Open();
+
+                    objCmd.ExecuteNonQuery();
+
+                    OracleDataAdapter da = new OracleDataAdapter(objCmd);
+
+
+
+
+                    da.Fill(dataset);
+
+                }
+
+                catch (Exception ex)
+
+                {
+
+                    System.Console.WriteLine("Exception: {0}", ex.ToString());
+
+                }
+
+                objConn.Close();
+
+            }
+
+            return dataset;
 
         }
 
